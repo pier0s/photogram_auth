@@ -1,7 +1,9 @@
 class PhotosController < ApplicationController
   def index
     @photos = Photo.all
-
+    @users = User.all
+    @comments = Comment.all
+    @sorted_comments = @comments.sort_by &:created_at
     render("photos/index.html.erb")
   end
 

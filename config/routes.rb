@@ -120,4 +120,7 @@ root "photos#index"
 get "/users", :controller => "users", :action => "index"
 get "/users/:id", :controller => "users", :action => "show"
 
+  #Route for my likes
+  get "/my_likes", :controller => "users", :action => "likes"
+
 end

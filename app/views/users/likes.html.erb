@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>User <%= @user.email %> </h3>
+  <h3>User <%= @user.email %> Likes </h3>
 </div>
 
 
@@ -10,9 +10,11 @@
         <th> <%= @user.email %></th>
       </tr>
 
-      <% @photos.each do |photo| %>
-      <% if photo.user_id == @user.id %>
+      <% @likes.each do |like| %>
+      <% if like.user_id == @user.id %>
       <tr>
+        <% photo = @photos[like.photo_id] %>
+
         <td><%= photo.caption %></td>
         <td><%= photo.image %></td>
       <td>
